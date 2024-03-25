@@ -12,14 +12,16 @@ function Timer() {
 
 
   <div>
-    {/* <Timer1/> */}
-    {/* <Timer2/> */}
-    <Timer3/>
+    <Timer1/><br /><br />
     <hr />
-    {/* <Stopwatch/> */}
+    <Timer2/><br /><br />
+    <hr />
+    <Timer3/><br /><br />
+    <hr />
+    <Stopwatch/> <br /><br />
     <hr />
 
-    {/* <Timer4/> */}
+    <Timer4/><br /><br />
 
   </div>
 

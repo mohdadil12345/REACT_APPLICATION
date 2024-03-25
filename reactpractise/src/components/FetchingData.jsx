@@ -4,7 +4,9 @@ function FetchingData() {
 
   const api = `https://fakestoreapi.com/products`;
 
+
   const [prod, setprod] = useState([])
+  const [inputval, setinputval] = useState("")
 
 
   const fetchData = async() => {
@@ -28,12 +30,30 @@ function FetchingData() {
   
 
 
+//  search by title
+
+const searchdata = prod.filter(ele => ele.title.toLowerCase().includes(inputval.toLowerCase()))
+
+
+
+
 
   return (
+    <>
+         <input onChange={(e) => setinputval(e.target.value)}  className='searc_input' type="text" placeholder='search by title' />
+
+
+   <select className='select_tag' name="category">
+      <option value="mens">Mens</option>
+      <option value="womens">Womens</option>
+      <option value="electronics">Electronics</option>
+      <option value="jewellery">Jewellery</option>
+   </select>
+
     <div className='prod_cont'>
          
 
-      {prod.map((ele) => (
+      {searchdata.map((ele) => (
           <div className="prod_items">
              <img src={ele.image} alt="" />
              <h4>{ele.title}</h4>
@@ -43,6 +63,7 @@ function FetchingData() {
       ))}
 
     </div>
+    </>
   )
 }
 

@@ -176,3 +176,15 @@ a{
    width: 200px;
    height: 200px;
 }
+
+
+.searc_input{
+  padding: 8px;
+  margin: 10px 10px;
+  border-radius: 8px;
+  width: 300px;
+}
+
+.select_tag {
+  width: 200px;
+}
