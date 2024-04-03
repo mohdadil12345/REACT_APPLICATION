@@ -188,3 +188,29 @@ a{
 .select_tag {
   width: 200px;
 }
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+
+.postada{
+  border: 1px solid black;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+
+}
+
+.postada input {
+  padding: 8px;
+  border-radius: 8px;
+
+}
