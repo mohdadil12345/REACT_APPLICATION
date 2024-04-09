@@ -49,6 +49,10 @@ function Calculator() {
       <hr />
 
       <Calculator2 />
+
+      <hr />
+
+
     </>
   );
 }
