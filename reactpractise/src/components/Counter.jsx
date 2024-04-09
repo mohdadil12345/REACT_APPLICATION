@@ -24,10 +24,12 @@ const hand_reset = () => {
 
       <h3>Counter : <span>{count}</span></h3>
 
-      <button onClick={handle_add} >INC</button>
-      <button disabled = {count <= 0} onClick={hand_dec}>DEC</button>
-      <button onClick={hand_reset}>RESET</button>
+    <div className="counter_btn">
+    <button className='inc' onClick={handle_add} >INC</button>
+      <button className='dec' disabled = {count <= 0} onClick={hand_dec}>DEC</button>
+      <button className='reset' onClick={hand_reset}>RESET</button>
 
+    </div>
     </div>
   )
 }

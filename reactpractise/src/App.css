@@ -214,3 +214,83 @@ a{
   border-radius: 8px;
 
 }
+
+
+.counter{
+  /* border: #0000ff; */
+  width: 400px;
+  margin: 100px auto;
+  padding: 30px;
+  box-shadow: rgba(173, 173, 173, 0.35) 0px 5px 15px;
+  text-align: center;
+}
+
+.counter_btn{
+  /* border: 1px solid red; */
+  
+  margin: auto;
+
+}
+
+.counter h3{
+  color: blue;
+  font-size: 30px;
+}
+
+.counter span {
+  color: tomato;
+}
+.counter_btn button {
+  width: 60px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(49, 49, 94);
+  color: white;
+}
+
+
+/* signup */
+
+.signup{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 400px;
+  margin: 100px auto;
+  text-align: center;
+  padding: 20px;
+
+
+}
+
+.signup h3{
+  text-align: center;
+  color: rgb(25, 25, 86);
+
+}
+
+
+.signup_form{
+   padding: 30px;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+
+.signup_form input, button{
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.signup_form button {
+  cursor: pointer;
+
+}
+
+.signup span{
+  color: green;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+}

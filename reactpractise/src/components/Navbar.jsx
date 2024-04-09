@@ -21,7 +21,7 @@ function Navbar() {
     </div>
 
        <div className="btn">
-       <Link to={"/signup"}>Signup</Link>
+       {/* <Link to={"/signup"}>Signup</Link> */}
        <Link to={"/login"}>Login</Link>
 
        </div>
