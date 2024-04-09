@@ -37,6 +37,7 @@ const handle_form = (e) => {
 
    if(checkval) {
     alert("Login successfull")
+   
     nav("/")
    }else{
     alert("wrong credential")
