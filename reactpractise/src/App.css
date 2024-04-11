@@ -1,39 +1,36 @@
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
 
-.navbar{
-   background-color: blue;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 10px 20px;
+.navbar {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
-.menu{
+.menu {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-a{
+a {
   color: white;
   text-decoration: none;
-  
 }
 
-.logo{
+.logo {
   color: white;
-
 }
 
-.btn{
+.btn {
   display: flex;
   gap: 20px;
 }
-
 
 .counter {
   margin: 30px auto;
@@ -42,9 +39,9 @@ a{
   gap: 20px;
 }
 
-.counter button{
-    margin-right: 20px;
-    width: 40px;
+.counter button {
+  margin-right: 20px;
+  width: 40px;
 }
 
 .todoitems {
@@ -63,39 +60,37 @@ a{
   padding: 10px;
 }
 
-.todoitems button{
-    width: 70px;
+.todoitems button {
+  width: 70px;
 }
 
-
-.togle_btn button{
-   width: 90px;
-   margin: 100px 100px;
-   text-align: center;
-   padding: 10px;
-   border-radius: 4px;
-   cursor: pointer;
+.togle_btn button {
+  width: 90px;
+  margin: 100px 100px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.green{
+.green {
   background-color: greenyellow;
 }
 
-.red{
+.red {
   background-color: tomato;
 }
 
-
 .calculator {
-    width: 300px;
-    margin: 50px auto;
+  width: 300px;
+  margin: 50px auto;
 }
 
 .calculator input {
-    padding: 8px;
-    border-radius: 4px;
+  padding: 8px;
+  border-radius: 4px;
 }
-.calculator  h3 {
+.calculator h3 {
   margin-top: 20px;
 }
 
@@ -105,57 +100,73 @@ a{
   gap: 10px;
 }
 
-.btnn button{
+.btnn button {
   padding: 5px;
 }
-
-
 
 .crud_form {
   margin: 50px auto;
   padding: 20px;
 }
 
-.crud_form form{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  border: 1px solid grey;
-   width: 400px;
-   padding: 10px;
-   border-radius: 4px;
+.crud_form form {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border: 1px solid #6464d2;
+  width: 400px;
+  padding: 30px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 30px auto;
 }
 
-.crud_form input, select,  button{
+.crud_form input,
+select,
+button {
   padding: 8px;
   border-radius: 4px;
-
+  border: 1px solid #6464d2;
 }
 
+.crud_form .items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 30px auto;
+  justify-content: center;
+  padding: 10px;
 
-
-.crud_form .items{
-    display: flex;
-    gap: 10px;
-    margin-top: 30px;
 }
-
+.crud_form button {
+  background-color: #0000ff;
+  color: white;
+  font-weight: bold;
+}
 
 .itrmlist {
   border: 1px solid rgb(7, 35, 63);
   width: 400px;
   padding: 10px;
+  border-radius: 4px;
+}
+.itrmlist button {
+  background-color: #0000ff;
+  font-weight: bold;
 }
 
+.crud_btn {
+  display: flex;
+  gap: 10px;
+}
 
 .timer {
-   width: 400px;
-   margin: 50px auto;
+  width: 400px;
+  margin: 50px auto;
 }
 
-
-.prod_cont{
+.prod_cont {
   padding: 10px;
   display: grid;
   grid-template-columns: repeat(4, 23%);
@@ -163,22 +174,19 @@ a{
   justify-content: center;
 }
 
-.prod_items{
-
+.prod_items {
   border: 1px solid grey;
   padding: 10px;
   border-radius: 4px;
   gap: 8px;
-
 }
 
-.prod_items img{
-   width: 200px;
-   height: 200px;
+.prod_items img {
+  width: 200px;
+  height: 200px;
 }
 
-
-.searc_input{
+.searc_input {
   padding: 8px;
   margin: 10px 10px;
   border-radius: 8px;
@@ -189,15 +197,15 @@ a{
   width: 200px;
 }
 
-.green{
+.green {
   color: green;
 }
 
-.red{
+.red {
   color: red;
 }
 
-.postada{
+.postada {
   border: 1px solid black;
   width: 400px;
   display: flex;
@@ -206,17 +214,14 @@ a{
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
-
 }
 
 .postada input {
   padding: 8px;
   border-radius: 8px;
-
 }
 
-
-.counter{
+.counter {
   /* border: #0000ff; */
   width: 400px;
   margin: 100px auto;
@@ -225,14 +230,13 @@ a{
   text-align: center;
 }
 
-.counter_btn{
+.counter_btn {
   /* border: 1px solid red; */
-  
-  margin: auto;
 
+  margin: auto;
 }
 
-.counter h3{
+.counter h3 {
   color: blue;
   font-size: 30px;
 }
@@ -248,35 +252,30 @@ a{
   color: white;
 }
 
-
 /* signup */
 
-.signup{
+.signup {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   width: 400px;
   margin: 100px auto;
   text-align: center;
   padding: 20px;
-
-
 }
 
-.signup h3{
+.signup h3 {
   text-align: center;
   color: rgb(25, 25, 86);
-
 }
 
-
-.signup_form{
-   padding: 30px;
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
+.signup_form {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-
-.signup_form input, button{
+.signup_form input,
+button {
   padding: 8px;
   border-radius: 4px;
   border: none;
@@ -285,15 +284,14 @@ a{
 
 .signup_form button {
   cursor: pointer;
-
 }
 
-.signup span{
+.signup span {
   color: green;
   font-size: large;
   font-weight: bold;
   cursor: pointer;
 }
-.error{
+.error {
   color: red;
 }

@@ -11,14 +11,16 @@ function CrudForm() {
   const [user, setuser] = useState(initialState);
   const [arr, setarr] = useState([]);
 
-  let api = "http://localhost:3000";
+
 
   const handle_change = (e) => {
     // console.log(e.target.name, e.target.value)
 
     const { name, value } = e.target;
 
-    let obj = { ...user };
+    let obj = { 
+      id : Date.now(),
+      ...user };
     obj[name] = value;
 
     setuser(obj);
@@ -55,25 +57,48 @@ function CrudForm() {
 
 // deletee
 
-const handle_delete = (index) => {
-    alert("item deleted succeffully")
+const handle_delete = (item) => {
   
-    let deleted = [...arr]
-    deleted.splice(index, 1)
+    alert("item deleted succeffully")
 
-    setarr(deleted)
-    localStorage.setItem("crud_data", JSON.stringify(deleted));
+    let del_item = arr.filter((ele)=> ele.id !== item.id)
+    // console.log("del_item",del_item )
+    setarr(del_item)
+  localStorage.setItem("crud_data", JSON.stringify(del_item));
+
 }
 
 
 
 // edit
 
-const handle_edit = (index) => {
-    alert(index)
-}
+const handle_edit = (ele) => {
+  setuser(ele);
+  
+  const updatedArray = arr.map(item => {
+    if (item.id === ele.id) {
+      return {
+        ...item,
+        username: ele.username,
+        email: ele.email,
+        password: ele.password
+      };
+    }
+    return item;
+  });
 
 
+ 
+  localStorage.setItem("crud_data", JSON.stringify(updatedArray));
+};
+
+
+
+
+
+
+
+const {username, email, password, gender} = user
 
   return (
     <div className="crud_form">
@@ -81,6 +106,7 @@ const handle_edit = (index) => {
         <label>Username</label>
         <input
           name="username"
+          value={username}
           onChange={(e) => handle_change(e)}
           type="text"
           placeholder="username"
@@ -89,6 +115,7 @@ const handle_edit = (index) => {
         <label>email</label>
         <input
           name="email"
+          value={email}
           onChange={(e) => handle_change(e)}
           type="email"
           placeholder="email"
@@ -97,12 +124,13 @@ const handle_edit = (index) => {
         <label>Password</label>
         <input
           name="password"
+          value={password}
           onChange={(e) => handle_change(e)}
           type="text"
           placeholder="password"
         />
 
-        <select onChange={(e) => handle_change(e)} name="gender" id="">
+        <select onChange={(e) => handle_change(e)} name="gender" value={gender} id="">
           <option value="">select gender</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -119,8 +147,10 @@ const handle_edit = (index) => {
               <p>email : {ele.email}</p>
               <p>password : {ele.password}</p>
               <p>gender : {ele.gender}</p>
-              <button onClick={()=> handle_delete(index)}>DELETE</button>
-              <button onClick={()=> handle_edit(index)}>EDIT</button>
+               <div className="crud_btn">
+               <button onClick={()=> handle_delete(ele)}>DELETE</button>
+              <button onClick={()=> handle_edit(ele)}>EDIT</button>
+               </div>
             </div>
           ))}
       </div>
@@ -130,22 +160,3 @@ const handle_edit = (index) => {
 
 export default CrudForm;
 
-// try {
-//   const headrlist = {
-//     "Content-Type" : "application/json"
-//   }
-//   let bodyContent = JSON.stringify(user)
-
-//   let  res = await fetch(`${api}/users`, {
-//        method : "POST",
-//        body : bodyContent,
-//        headers : headrlist
-
-//   })
-
-//   let data = await res.json()
-//   console.log("data", data)
-
-//  } catch (error) {
-//   console.log(error)
-//  }
