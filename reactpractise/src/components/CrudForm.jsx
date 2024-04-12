@@ -11,6 +11,10 @@ function CrudForm() {
   const [user, setuser] = useState(initialState);
   const [arr, setarr] = useState([]);
 
+  const [editform, seteditform] = useState(false);
+  const [editdata, seteditdata] = useState(initialState);
+
+
 
 
   const handle_change = (e) => {
@@ -49,7 +53,6 @@ function CrudForm() {
 
   useEffect(() => {
     let lsdata = JSON.parse(localStorage.getItem("crud_data")) || [];
-
     setarr(lsdata);
 
   }, []);
@@ -72,27 +75,66 @@ const handle_delete = (item) => {
 
 // edit
 
-const handle_edit = (ele) => {
-  setuser(ele);
+// const handle_edit = (ele) => {
+//   setuser(ele);
   
-  const updatedArray = arr.map(item => {
-    if (item.id === ele.id) {
-      return {
-        ...item,
-        username: ele.username,
-        email: ele.email,
-        password: ele.password
-      };
-    }
-    return item;
-  });
+//   const updatedArray = arr.map(item => {
+//     if (item.id === ele.id) {
+//       return {
+//         ...item,
+//         username: ele.username,
+//         email: ele.email,
+//         password: ele.password
+//       };
+//     }
+//     return item;
+//   });
 
 
  
-  localStorage.setItem("crud_data", JSON.stringify(updatedArray));
-};
+//   localStorage.setItem("crud_data", JSON.stringify(updatedArray));
+// };
 
 
+const handle_edit = (ele) => {
+  seteditdata(ele);
+  seteditform(true)
+}
+
+const handle_cancel = () => {
+  seteditform(false)
+    
+}
+
+const handle_edit_change = (e) => {
+  const { name, value } = e.target;
+seteditdata({...editdata, [name] : value})
+
+}
+
+
+const handle_edit_form = (e) => {
+  e.preventDefault();
+  console.log(editdata)
+
+const updatearr = arr.map(item => {
+    if(item.id === editdata.id){
+      return {
+        ...editdata,
+        username: editdata.username,
+        email: editdata.email,
+        password: editdata.password,
+        gender: editdata.gender
+      }
+    }
+    return item
+})
+
+localStorage.setItem("crud_data", JSON.stringify(updatearr));
+setarr(updatearr);
+seteditform(false);
+seteditdata(initialState);
+}
 
 
 
@@ -102,6 +144,8 @@ const {username, email, password, gender} = user
 
   return (
     <div className="crud_form">
+
+
       <form onSubmit={(e) => handle_form(e)}>
         <label>Username</label>
         <input
@@ -154,6 +198,47 @@ const {username, email, password, gender} = user
             </div>
           ))}
       </div>
+
+
+  {editform &&       <form onSubmit={(e) => handle_edit_form(e)}>
+        <label>Username</label>
+        <input
+          name="username"
+          value={editdata.username}
+          onChange={(e) => handle_edit_change(e)}
+          type="text"
+          placeholder="username"
+        />
+
+        <label>email</label>
+        <input
+          name="email"
+          value={editdata.email}
+          onChange={(e) => handle_edit_change(e)}
+          type="email"
+          placeholder="email"
+        />
+
+        <label>Password</label>
+        <input
+          name="password"
+          value={editdata.password}
+          onChange={(e) => handle_edit_change(e)}
+          type="text"
+          placeholder="password"
+        />
+
+        <select onChange={(e) => handle_edit_change(e)} name="gender" value={editdata.gender} id="">
+          <option value="">select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <button type="submit">Submit</button>
+        <button onClick={handle_cancel} type="submit">Cancel</button>
+      </form>}
+     
+
     </div>
   );
 }
