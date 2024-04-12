@@ -326,3 +326,28 @@ button {
    height: 200px;
    width: 200px;
 }
+
+.add_form{
+  display: flex;
+  flex-direction: column;
+  margin:20px auto;
+  border: 1px solid rgb(43, 27, 105);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 20px;
+  border-radius: 4px;
+  width: 400px;
+  gap: 10px;
+
+}
+
+.add_form input{
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.submit {
+  background-color: tomato;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
