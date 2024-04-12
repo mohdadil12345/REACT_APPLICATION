@@ -295,3 +295,34 @@ button {
 .error {
   color: red;
 }
+
+
+/* contanecrudapi */
+
+.contanecrudapi{
+
+  display: grid;
+  grid-template-columns: repeat(3, 25%);
+  gap: 10px;
+  justify-content: center;
+  padding: 10px;
+
+}
+
+.prod_items{
+   display: flex;
+   flex-direction: column;
+   border: 1px solid rgb(37, 13, 92);
+
+}
+
+.prod_items button{
+   background-color: blue;
+   color: white;
+   font-weight: bold;
+}
+
+.prod_items  img{
+   height: 200px;
+   width: 200px;
+}

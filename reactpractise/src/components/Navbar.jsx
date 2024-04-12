@@ -14,8 +14,9 @@ function Navbar() {
       <Link to={"/counter"}>Counter</Link>
       <Link to={"/todolist"}>Todolist</Link>
       <Link to={"/fetch"}>FetchData</Link>
-      <Link to={"/debounce"}>DebounceSearch</Link>
       <Link to={"/crud"}>CrudForm</Link>
+      <Link to={"/debounce"}>DebounceSearch</Link>
+      <Link to={"/crudapi"}>crudapi</Link>
       <Link to={"/timer"}>Timer</Link>
       <Link to={"/calculator"}>Calculator</Link>
     </div>
