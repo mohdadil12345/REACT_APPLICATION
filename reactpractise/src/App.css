@@ -331,7 +331,7 @@ button {
   display: flex;
   flex-direction: column;
   margin:20px auto;
-  border: 1px solid rgb(43, 27, 105);
+  border: #0000ff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 20px;
   border-radius: 4px;
@@ -343,6 +343,8 @@ button {
 .add_form input{
   padding: 8px;
   border-radius: 4px;
+  border: #0000ff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .submit {
@@ -356,15 +358,35 @@ button {
   display: flex;
   flex-direction: column;
   margin:20px auto;
-  border: 1px solid rgb(178, 62, 39);
+  border: #0000ff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   padding: 20px;
   border-radius: 4px;
   width: 400px;
   gap: 10px;
+  position: absolute;
+  top: 150%;
+  left: 40%;
 }
 
 .edit-form input{
   padding: 8px;
   border-radius: 4px;
+  border: #0000ff;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
+
+.edit-form select{
+  padding: 8px;
+  border-radius: 4px;
+  border: #0000ff
+}
+
+.edit-form  button{
+  cursor: pointer;
+  background-color: #0000ff;
+  color: white;
+  font-weight: bold;
+}
+
+
