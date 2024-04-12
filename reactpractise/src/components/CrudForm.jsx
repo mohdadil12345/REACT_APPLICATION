@@ -75,25 +75,6 @@ const handle_delete = (item) => {
 
 // edit
 
-// const handle_edit = (ele) => {
-//   setuser(ele);
-  
-//   const updatedArray = arr.map(item => {
-//     if (item.id === ele.id) {
-//       return {
-//         ...item,
-//         username: ele.username,
-//         email: ele.email,
-//         password: ele.password
-//       };
-//     }
-//     return item;
-//   });
-
-
- 
-//   localStorage.setItem("crud_data", JSON.stringify(updatedArray));
-// };
 
 
 const handle_edit = (ele) => {
