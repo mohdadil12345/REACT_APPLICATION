@@ -4,22 +4,6 @@
       "title": "Fjallraven Laptops",
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "men",
-      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "id": 3
-    },
-    {
-      "title": "Fjallraven Laptops",
-      "price": 109.95,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-      "category": "women",
-      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "id": 3
-    },
-    {
-      "title": "Fjallraven Laptops",
-      "price": 109.95,
-      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jewellery",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "id": 3
@@ -35,16 +19,16 @@
     {
       "title": "adil",
       "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      "category": "mens",
       "price": "3435",
       "description": "fdgdghgbjfdkhkghgjkfhjjfkhnhjkfjkhkfhkfhkjfkhjkh",
+      "category": "mens",
       "id": 4
     },
     {
       "title": "osama",
       "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-      "category": "mens",
-      "price": "3435",
+      "category": "women",
+      "price": "7777",
       "description": "fdgdghgbjfdkhkghgjkfhjjfkhnhjkfjkhkfhkfhkjfkhjkh",
       "id": 5
     }

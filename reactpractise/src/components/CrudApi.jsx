@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
+import CrudapiEdit from "./CrudapiEdit";
 
 const initilastate = {
     title: "",
@@ -13,8 +14,9 @@ function CrudApi() {
   let api = "http://localhost:3000/products";
 
   const [prod, setprod] = useState([]);
-
   const [formdata, setformdata] = useState(initilastate);
+const [editFormOpen, setEditFormOpen] = useState(false);
+
 
   // popst
 
@@ -86,6 +88,45 @@ function CrudApi() {
     }
   };
 
+
+
+// handle_edit
+// const handle_edit = async(ele) => {
+//     setformdata(ele)
+
+
+//     let res = await fetch(`${api}/${ele.id}`, {
+//         method : "PUT",
+//         headers:{"Content-Type" : "application/json"},
+//         body : JSON.stringify({
+//             title : ele.title,
+//             image : ele.image,
+//             price : ele.price,
+//             description : ele.description,
+//             category : ele.category,
+//         })
+//     })
+
+//     let patchdata = await res.json()
+//     fetchdata(patchdata)
+
+
+
+
+// }
+
+
+
+
+
+
+const handle_edit = (ele) => {
+    setformdata(ele);
+    setEditFormOpen(true)
+}
+
+
+
 const {title, image, price, category, description} = formdata
 
   return (
@@ -145,15 +186,27 @@ const {title, image, price, category, description} = formdata
               {item.price}
             </p>
             <p>
+              <strong>category : </strong>
+              {item.category}
+            </p>
+            <p>
               {" "}
               <strong>desc :</strong>
               {item.description}
             </p>
             <button onClick={() => deletedata(item.id)}>DELETE</button>
-            <button>EDIT</button>
+            <button onClick={()=> handle_edit(item)}>EDIT</button>
           </div>
         ))}
       </div>
+
+
+
+      {editFormOpen && (
+        <CrudapiEdit formdata={formdata} setEditFormOpen={setEditFormOpen} fetchdata={fetchdata}/>
+      )}
+
+
     </div>
   );
 }
