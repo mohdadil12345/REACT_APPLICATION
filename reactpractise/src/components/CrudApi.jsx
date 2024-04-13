@@ -11,11 +11,15 @@ const initilastate = {
   }
 
 function CrudApi() {
-  let api = "http://localhost:3000/products";
+
 
   const [prod, setprod] = useState([]);
   const [formdata, setformdata] = useState(initilastate);
 const [editFormOpen, setEditFormOpen] = useState(false);
+const [currPage, setcurrPage] = useState(1);
+
+// let api = `http://localhost:3000/products?_page=1&_limit=3`
+let api = "http://localhost:3000/products";
 
 
   // popst
@@ -58,9 +62,9 @@ const [editFormOpen, setEditFormOpen] = useState(false);
 
 
   // get
-  const fetchdata = async () => {
+  const fetchdata = async (currPage) => {
     try {
-      let res = await fetch(api);
+      let res = await fetch(`${api}?_page=${currPage}&_limit=3`);
       let data = await res.json();
       console.log("data", data);
       setprod(data);
@@ -70,8 +74,8 @@ const [editFormOpen, setEditFormOpen] = useState(false);
   };
 
   useEffect(() => {
-    fetchdata();
-  }, []);
+    fetchdata(currPage);
+  }, [currPage]);
 
   //  delete
 
@@ -174,7 +178,14 @@ const {title, image, price, category, description} = formdata
       </form>
    </div>
 
+   <div className="pagination">
+          <button disabled={currPage <= 1 } onClick={()=> setcurrPage(prev => prev - 1)} >PREV</button>
+          <p>{currPage}</p>
+          <button onClick={()=> setcurrPage(prev => prev + 1)}>NEXT</button>
+        </div>
+
       <div className="contanecrudapi">
+
         {prod.map((item) => (
           <div className="prod_items">
             <img src={item.image} alt="" />

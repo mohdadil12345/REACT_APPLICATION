@@ -167,6 +167,7 @@ const handle_form = async(e) => {
       </select>
 
       <div className="prod_cont">
+ 
         {prod.map((ele) => (
           <div className="prod_items">
             <img src={ele.image} alt="" />

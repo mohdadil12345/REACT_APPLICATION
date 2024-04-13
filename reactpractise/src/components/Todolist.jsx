@@ -34,9 +34,9 @@ function Todolist() {
 
   //  delete
   const handle_delete = (id) => {
-    alert("todo item deleted");
     let del_item = todo.filter((ele) => ele.id !== id);
     settodo(del_item);
+    alert("todo item deleted");
   };
 
   //  toggle
