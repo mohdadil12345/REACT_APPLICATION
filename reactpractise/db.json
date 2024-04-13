@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "title": "Fjallraven Laptops",
+      "title": "adil",
       "price": 109.95,
       "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
       "category": "jewellery",
@@ -31,7 +31,8 @@
       "price": "7777",
       "description": "fdgdghgbjfdkhkghgjkfhjjfkhnhjkfjkhkfhkfhkjfkhjkh",
       "id": 5
-    },  {
+    },
+    {
       "id": 6,
       "title": "Solid Gold Petite Micropave ",
       "price": 168,

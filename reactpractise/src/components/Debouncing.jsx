@@ -22,7 +22,7 @@ function Debouncing() {
       clearTimeout(id.current);
     } 
     
-
+            
       id.current = setTimeout(() => {
         FetchingData()
       }, 2000);
