@@ -44,13 +44,48 @@ a {
   width: 40px;
 }
 
+.todolist{
+ padding: 20px;
+}
+.info{
+  /* border: 1px solid blue; */
+  width: 400px;
+  display: flex;
+  gap: 10px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 8px;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+}
+.info input{
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border: none;
+}
+.info button{
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border: none;
+  background-color: #0000ff;
+  color: white;
+  font-weight: bold;
+
+}
+
 .todoitems {
-  border: 1px solid red;
-  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  border-radius: 4px;
   gap: 10px;
-  padding: 10px;
+
 }
 .todo {
   width: 300px;
@@ -58,6 +93,19 @@ a {
   flex-direction: column;
   gap: 10px;
   padding: 10px;
+  margin: auto;
+}
+
+.btns{
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.btns button{
+  cursor: pointer;
+  color: white;
+  background-color: black;
 }
 
 .todoitems button {
