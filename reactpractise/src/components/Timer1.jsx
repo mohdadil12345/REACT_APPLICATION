@@ -1,22 +1,28 @@
-import React, { useRef, useState } from "react";
+import React, {useEffect, useState } from "react";
 
 function Timer1() {
-  const [count, setcount] = useState(20);
+  const [count, setcount] = useState(60);
 
-  let id = useRef(null);
 
-  if (id.current) {
-    clearTimeout(id.current);
-  }
+  useEffect(() => {
+  
+    let id;
 
-  id.current = setTimeout(() => {
-    if (count > 0) {
-
-      setcount((prev) => prev - 1);
-
+  
+    id= setTimeout(() => {
+      if (count > 0) {
+  
+        setcount((prev) => prev - 1);
+  
+      }
+    }, 1000);
+  
+  
+    return () => {
+      clearTimeout(id);
     }
-  }, 1000);
-
+  }, [count])
+  
 
 
   return (

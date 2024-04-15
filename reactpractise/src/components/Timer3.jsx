@@ -3,45 +3,31 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 
 function Timer3() {
-
-    const [currentTime, setcurrentTime] = useState(0)
-   const [inputval, setinputval] = useState("")
+     const [currentTime, setcurrentTime] = useState(0)
+     const [inputval, setinputval] = useState("")
 
 
     const handle_change =  (e) => {
            setinputval(parseInt(e.target.value))
     }
 
-
-
     useEffect(() => {
+      setcurrentTime(inputval)
 
-        let id;
+      let id = setInterval(() => {
 
-        const timer = () => {
+          setcurrentTime(prev => {
+              if (prev <= 0) {
+                  clearInterval(id);
+                  return 0;
+              }
+              return prev - 1;
+          });
 
-            setcurrentTime(inputval)
+      }, 1000);
 
-            id = setInterval(() => {
-
-                setcurrentTime((prev) => {
-                    if(prev <= 0) {
-                        return 0
-                    }
-                    return prev - 1
-                })
-                
-            }, 1000);
-
-        }
-
-        timer()
-
-        return ()=> {clearInterval(id)}
-
-  
-    }, [inputval])
-    
+      return ()=> {clearInterval(id)}
+  }, [inputval])
 
 
 
