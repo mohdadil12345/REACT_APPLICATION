@@ -183,21 +183,4 @@ const handle_form = async(e) => {
 
 export default FetchingData;
 
-// const deleteClick = async (id) => {
-//   try {
-//     // https://mock-5back-deploy.onrender.com/users
-//     let res = await fetch(
-//       `https://mock-5back-deploy.onrender.com/users/delete/${id}`,
-//       {
-//         method: "DELETE",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//       }
-//     );
-
-//     let data = await res.json();
-//     fetchSllData();
-//   } catch (error) {}
-// };
 
