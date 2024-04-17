@@ -16,6 +16,7 @@ function CrudApi() {
   const [prod, setprod] = useState([]);
   const [formdata, setformdata] = useState(initilastate);
 const [editFormOpen, setEditFormOpen] = useState(false);
+
 const [currPage, setcurrPage] = useState(1);
 
 // let api = `http://localhost:3000/products?_page=1&_limit=3`
@@ -93,31 +94,6 @@ let api = "http://localhost:3000/products";
   };
 
 
-
-// handle_edit
-// const handle_edit = async(ele) => {
-//     setformdata(ele)
-
-
-//     let res = await fetch(`${api}/${ele.id}`, {
-//         method : "PUT",
-//         headers:{"Content-Type" : "application/json"},
-//         body : JSON.stringify({
-//             title : ele.title,
-//             image : ele.image,
-//             price : ele.price,
-//             description : ele.description,
-//             category : ele.category,
-//         })
-//     })
-
-//     let patchdata = await res.json()
-//     fetchdata(patchdata)
-
-
-
-
-// }
 
 
 
