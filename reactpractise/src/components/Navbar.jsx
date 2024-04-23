@@ -18,6 +18,7 @@ function Navbar() {
       <Link to={"/debounce"}>DebounceSearch</Link>
       <Link to={"/crudapi"}>crudapi</Link>
       <Link to={"/timer"}>Timer</Link>
+      <Link to={"/table"}>Table</Link>
       <Link to={"/calculator"}>Calculator</Link>
     </div>
 

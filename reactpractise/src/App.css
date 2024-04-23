@@ -453,3 +453,37 @@ button {
   background-color: black;
   color: white;
 }
+
+/* table */
+
+.prod_contain{
+  padding: 10px;
+
+}
+
+table{
+  margin: 20px auto;
+  padding: 10px;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #d88383;
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Styles for table data cells */
+td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.del_btn{
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}

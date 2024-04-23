@@ -11,6 +11,7 @@ import DebounceSearch from '../DebounceSearch'
 import Calculator from '../Calculator'
 import Timer from '../Timer'
 import CrudApi from '../CrudApi'
+import Table from '../Table'
 
 function AllRoutes() {
   return (
@@ -25,6 +26,7 @@ function AllRoutes() {
             <Route path='/counter' element =  {<Counter/>}/>
             <Route path='/debounce' element =  {<DebounceSearch/>}/>
             <Route path='/timer' element =  {<Timer/>}/>
+            <Route path='/table' element =  {<Table/>}/>
             <Route path='/calculator' element =  {<Calculator/>}/>
             <Route path='/crudapi' element =  {<CrudApi/>}/>
         </Routes>
