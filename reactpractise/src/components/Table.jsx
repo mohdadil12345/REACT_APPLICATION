@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Tableedit from "./Tableedit";
 
 function Table() {
   const [prod, setprod] = useState([]);
+  const [show, setshow] = useState(false);
 
   let api = "https://reqres.in/api/users";
 //   let api = "https://reqres.in/api/users?page=2"
@@ -27,43 +29,50 @@ function Table() {
 
 
 
-// const deletedata = async (id) => {
-//     try {
-//         let res = await fetch(`${api}/${id}`, {
-//           method: "DELETE",
-//         });
-  
-//         if (res.status === 204) {
-//           alert("Item deleted successfully");
-//           setprod(prod.filter(item => item.id !== id));
-//         }
-//         //  else {
-//         //   let delData = await res.json();
-//         //   console.log("del_data", delData);
-//         //   alert("Item deleted successfully");
-      
-//         //   setprod(delData.data);
-         
-//         // }
-//       } catch (error) {
-//         console.log(error);
-//       }
-//   };
-
-
-  const deletedata = async (id) => {
+const deletedata = async (id) => {
     try {
-      let res = await fetch(`${api}/${id}`, {
-        method: "DELETE",
-      });
-      let del_data = await res.json();
-      console.log("del_data", del_data);
-      alert("item deleted")
-    //   fetchdata(del_data);
-    } catch (error) {
-      console.log(error);
-    }
+        let res = await fetch(`${api}/${id}`, {
+          method: "DELETE",
+        });
+  
+        if (res.status === 204) {
+          alert("Item deleted successfully");
+          setprod(prod.filter(item => item.id !== id));
+        }
+        //  else {
+        //   let delData = await res.json();
+        //   console.log("del_data", delData);
+        //   alert("Item deleted successfully");
+      
+        //   setprod(delData.data);
+         
+        // }
+      } catch (error) {
+        console.log(error);
+      }
   };
+
+
+  // const deletedata = async (id) => {
+  //   try {
+  //     let res = await fetch(`${api}/${id}`, {
+  //       method: "DELETE",
+  //     });
+
+  //     if(res.ok) {
+  //       let del_data = await res.json();
+  //       console.log("del_data", del_data);
+  //       alert("item deleted")
+  //       fetchdata(del_data);
+
+  //     }else{
+  //       alert("something went wrong")
+  //     }
+ 
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
 
 
@@ -72,6 +81,17 @@ function Table() {
 //   setprod(deldata)
 // }
 
+
+
+
+
+// edit
+
+
+const editdata = (item) => {
+   console.log(item)
+   setshow(true)
+}
 
 
 
@@ -98,12 +118,16 @@ function Table() {
             <td>{item.email}</td>
             <td><img src={item.avatar} alt="" /></td>
             <button onClick={()=> deletedata(item.id)} className="del_btn">DELETE</button>
+            <button onClick={()=> editdata(item)} className="del_btn">EDIT</button>
           </tr>
         ))}
       </tbody>
 
 
       </table>
+
+<Tableedit setshow={setshow}/>
+
     </div>
   );
 }
