@@ -18,6 +18,7 @@ function Timer1() {
     }, 1000);
   
   
+  
     return () => {
       clearTimeout(id);
     }

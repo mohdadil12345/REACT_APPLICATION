@@ -33,6 +33,7 @@ function Timer2() {
 
   const handle_pause = () => {
     setactive(false);
+   
   };
 
   const formatTimer = (timeinSeconds) => {
@@ -59,7 +60,7 @@ function Timer2() {
 
   return (
     <div>
-      <h2>Time : {formatTimer(currTime)} </h2>
+      <h2>Timer2 : {formatTimer(currTime)} </h2>
 
       <button onClick={hand_start}>START</button>
 

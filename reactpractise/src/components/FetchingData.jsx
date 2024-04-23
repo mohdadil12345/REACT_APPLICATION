@@ -16,13 +16,13 @@ function FetchingData() {
 
   const [prod, setprod] = useState([]);
   const [globalData, setglobalData] = useState([]);
-  const [data, setdata] = useState(initialdata)
+  const [formdata, setdata] = useState(initialdata)
 
 const handle_chnagee = (e) => {
     const {name, value} = e.target
     // console.log(name, value)
 
-      let obj = {...prod}
+      let obj = {...formdata}
       obj[name] = value
 
       // console.log("obj", obj)
@@ -33,25 +33,26 @@ const handle_chnagee = (e) => {
 
 const handle_form = async(e) => {
   e.preventDefault()
-     console.log("data", data)
+     console.log("formdata", formdata)
 
-   try {
-    let res  = await fetch("https://fakestoreapi.com/products", {
-        method : "POST",
-        headers : {"Content-Type" : "application/json"}, 
-        body : JSON.stringify(data)
-    }) 
-
-    let postdata = await res.json()
-    alert("data added")
-    console.log("postdata", postdata)
-    // setprod([...prod, postdata]);
-    // fetchData([...prod, postdata])
-
-    
-   } catch (error) {
-     console.log(error)
-   }
+     try {
+      let res = await fetch(`${api}`, {
+          method : "POST",
+          headers : {
+              "Content-Type" : "application/json"
+          },
+          body : JSON.stringify(formdata)
+      })
+      let postdata = await res.json()
+      console.log("postdata", postdata)
+      // fetchData(postdata)
+      setprod([...prod, postdata]);
+      alert("data added")
+      setdata(initialdata)
+      
+     } catch (error) {
+      console.log(error)
+     }
 
 
 }
@@ -82,7 +83,7 @@ const handle_form = async(e) => {
     ele.title.toLowerCase().includes(e.target.value.toLowerCase())
   );
   setprod(filter_search);  
-  }
+  } 
 
   //  filter by category
   const handle_category = (e) => {
@@ -119,6 +120,27 @@ const handle_form = async(e) => {
     
 
   }
+
+
+
+const handle_delete = async(id) => {
+  //  alert(id)
+    try {
+      let res = await fetch(`https://fakestoreapi.com/products/${id}`, {
+        method : "DELETE"
+      })
+
+     let deldata = await res.json()
+     console.log("deldata", deldata)
+     alert("item deleted")
+      setprod(prod.filter((item)=> item.id !== id))
+
+    } catch (error) {
+      console.log(error)
+    }
+}
+
+
 
 
   return (
@@ -174,6 +196,7 @@ const handle_form = async(e) => {
             <h4>{ele.title}</h4>
             <p>{ele.category}</p>
             <p>{ele.price}</p>
+            <button onClick={() => handle_delete(ele.id)}>DELETE</button>
           </div>
         ))}
       </div>

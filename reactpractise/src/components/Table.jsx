@@ -1,9 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Tableedit from "./Tableedit";
 
+let initform = {
+   first_name : "",
+   last_name : "",
+   email : "",
+   avatar : "",
+}
+
 function Table() {
   const [prod, setprod] = useState([]);
   const [show, setshow] = useState(false);
+  const [formdata, setfromdata] = useState(initform);
+
+   
 
   let api = "https://reqres.in/api/users";
 //   let api = "https://reqres.in/api/users?page=2"
@@ -38,6 +48,7 @@ const deletedata = async (id) => {
         if (res.status === 204) {
           alert("Item deleted successfully");
           setprod(prod.filter(item => item.id !== id));
+        
         }
         //  else {
         //   let delData = await res.json();
@@ -89,7 +100,8 @@ const deletedata = async (id) => {
 
 
 const editdata = (item) => {
-   console.log(item)
+  //  console.log(item)
+   setfromdata(item)
    setshow(true)
 }
 
@@ -126,7 +138,7 @@ const editdata = (item) => {
 
       </table>
 
-<Tableedit setshow={setshow}/>
+{show && <Tableedit setshow={setshow} formdata={formdata} fetchdata={fetchdata}/>}
 
     </div>
   );

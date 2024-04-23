@@ -506,3 +506,37 @@ td {
   padding: 8px;
   border-radius: 4px;
 }
+
+
+.calci {
+  border: 1px solid rgb(202, 185, 185);
+  border-radius: 4px;
+  width: 300px;
+  margin: auto;
+  padding: 12px;
+}
+
+.calci  input{
+   padding: 8px;
+   border-radius: 4px;
+
+}
+
+.btnnn{
+  padding-bottom: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+.box2{
+  display: flex;
+  gap: 30px;
+
+}
+
+.equal{
+  width: 80px;
+}

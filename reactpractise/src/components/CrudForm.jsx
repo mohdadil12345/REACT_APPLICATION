@@ -28,6 +28,11 @@ function CrudForm() {
     obj[name] = value;
 
     setuser(obj);
+
+
+
+
+    
   };
 
   const handle_form = (e) => {
@@ -98,6 +103,8 @@ const handle_edit_form = (e) => {
   e.preventDefault();
   console.log(editdata)
 
+
+
 const updatearr = arr.map(item => {
     if(item.id === editdata.id){
       return {
@@ -115,6 +122,11 @@ localStorage.setItem("crud_data", JSON.stringify(updatearr));
 setarr(updatearr);
 seteditform(false);
 seteditdata(initialState);
+
+
+
+
+
 }
 
 
