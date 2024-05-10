@@ -12,6 +12,7 @@ import Calculator from '../Calculator'
 import Timer from '../Timer'
 import CrudApi from '../CrudApi'
 import Table from '../Table'
+import FormReducer from '../FormReducer'
 
 function AllRoutes() {
   return (
@@ -29,6 +30,7 @@ function AllRoutes() {
             <Route path='/table' element =  {<Table/>}/>
             <Route path='/calculator' element =  {<Calculator/>}/>
             <Route path='/crudapi' element =  {<CrudApi/>}/>
+            <Route path='/formRedu' element =  {<FormReducer/>}/>
         </Routes>
     </div>
   )

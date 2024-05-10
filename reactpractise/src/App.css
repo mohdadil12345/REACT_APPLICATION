@@ -8,14 +8,13 @@
   background-color: blue;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 10px 20px;
 }
 
 .menu {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 a {
@@ -23,9 +22,6 @@ a {
   text-decoration: none;
 }
 
-.logo {
-  color: white;
-}
 
 .btn {
   display: flex;
@@ -271,7 +267,6 @@ button {
 }
 
 .counter {
-  /* border: #0000ff; */
   width: 400px;
   margin: 100px auto;
   padding: 30px;
@@ -280,7 +275,6 @@ button {
 }
 
 .counter_btn {
-  /* border: 1px solid red; */
 
   margin: auto;
 }

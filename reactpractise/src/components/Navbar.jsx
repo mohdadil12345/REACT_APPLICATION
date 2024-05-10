@@ -5,10 +5,7 @@ function Navbar() {
   return (
 
 <div className="navbar">
-  <div className="logo">
-  <h1>Logo</h1>
 
-  </div>
     <div className="menu">
     <Link to={"/"}>Home</Link>
       <Link to={"/counter"}>Counter</Link>
@@ -19,6 +16,7 @@ function Navbar() {
       <Link to={"/crudapi"}>crudapi</Link>
       <Link to={"/timer"}>Timer</Link>
       <Link to={"/table"}>Table</Link>
+      <Link to={"/formRedu"}>formRedu</Link>
       <Link to={"/calculator"}>Calculator</Link>
     </div>
 
