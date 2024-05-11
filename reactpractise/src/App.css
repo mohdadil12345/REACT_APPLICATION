@@ -534,3 +534,8 @@ td {
 .equal{
   width: 80px;
 }
+
+
+@media only screen and (max-width : 610px) {
+  
+}
